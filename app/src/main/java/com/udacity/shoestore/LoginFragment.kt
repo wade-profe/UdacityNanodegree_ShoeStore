@@ -5,7 +5,9 @@ import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.LoginFragmentBinding
 
 class LoginFragment: Fragment() {
@@ -16,8 +18,16 @@ class LoginFragment: Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         loginFragmentBinding = LoginFragmentBinding.inflate(inflater, container, false)
-        return loginFragmentBinding!!.root
+        return loginFragmentBinding.root
+    }
+
+    fun goToWelcome(){
+        if(loginFragmentBinding.emailText.text.isNullOrBlank() || loginFragmentBinding.passwordText.text.isNullOrBlank()){
+            Toast.makeText(requireContext(), "Please enter an email and password", Toast.LENGTH_SHORT).show()
+        } else {
+            Navigation.findNavController(loginFragmentBinding.root).navigate(R.id.action_loginFragment_to_welcomeFragment)
+        }
     }
 }
