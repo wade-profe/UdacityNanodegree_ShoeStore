@@ -6,5 +6,10 @@
     <string name="create">Create</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_page_description">Welcome to the Shoe Store app: your easy, paperless shoe inventory solution</string>
+    <string name="how_it_works">How it works</string>
+    <string name="instruction_1">Simply tap the floating + button on your inventory list screen</string>
+    <string name="instruction_2">Add your shoe details in the input fields and save!</string>
 
 </resources>

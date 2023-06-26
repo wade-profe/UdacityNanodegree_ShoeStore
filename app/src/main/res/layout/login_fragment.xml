@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="loginFragment"
             type="com.udacity.shoestore.LoginFragment" />
@@ -13,23 +12,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/shoes_on_line">
+        android:background="@drawable/login_screen_background">
 
         <TextView
             android:id="@+id/login_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:text="@string/login"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            style="@style/page_header_style"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/email_text"
-            style="@style/login_page_instruction"
+            style="@style/basic_text_style"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="5dp"
             android:text="@string/enter_email"
@@ -52,7 +47,7 @@
 
         <TextView
             android:id="@+id/password_text"
-            style="@style/login_page_instruction"
+            style="@style/basic_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
@@ -81,31 +76,26 @@
             android:id="@+id/create_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:fontFamily="@font/stylish"
             android:text="@string/create"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            style="@style/button_style"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
             android:onClick="@{() -> loginFragment.goToWelcome()}"/>
 
         <Button
             android:id="@+id/login_button"
+            style="@style/button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:fontFamily="@font/stylish"
             android:text="@string/login"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteX="298dp"
-            tools:layout_editor_absoluteY="658dp"
             android:onClick="@{() -> loginFragment.goToWelcome()}"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
