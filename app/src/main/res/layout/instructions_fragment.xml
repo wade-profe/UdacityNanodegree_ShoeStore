@@ -58,10 +58,11 @@
             app:layout_constraintTop_toTopOf="@id/instruction_2"/>
 
         <Button
+            android:id="@+id/continue_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/button_style"
-            android:text="To the list"
+            android:text="@string/to_the_list"
             android:drawableRight="@drawable/baseline_arrow_forward_ios_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

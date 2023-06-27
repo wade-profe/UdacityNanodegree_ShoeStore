@@ -11,5 +11,7 @@
     <string name="how_it_works">How it works</string>
     <string name="instruction_1">Simply tap the floating + button on your inventory list screen</string>
     <string name="instruction_2">Add your shoe details in the input fields and save!</string>
+    <string name="c0ntinue">Continue</string>
+    <string name="to_the_list">To the list</string>
 
 </resources>

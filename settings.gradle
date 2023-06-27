@@ -1,4 +1,6 @@
 pluginManagement {
+
+
     repositories {
         gradlePluginPortal()
         google()
@@ -14,3 +16,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ShoeStore"
 include ':app'
+
+
