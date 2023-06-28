@@ -1,60 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         app:cardElevation="2dp"
         android:background="@drawable/card_shape"
         >
 
-        <!--todo adjust text view sizes-->
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Party shoes"
-            android:layout_gravity="start|top"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/stylish"/>
+            android:minHeight="200dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Size: 1.0"
-            android:layout_gravity="end|top"
-            android:layout_margin="10dp"
-            android:textSize="16sp"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/stylish"/>
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Party Shoes"
+                android:text="@{shoe.name}"
+                android:layout_margin="10dp"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/stylish"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nike"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_margin="10dp"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/stylish"/>
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/shoe_size(shoe.size)}"
+                tools:text="Size: 1.0"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/stylish"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This is a Nike shoe"
-            android:layout_gravity="center|bottom"
-            android:layout_margin="10dp"
-            android:textColor="@color/colorPrimary"
-            android:fontFamily="@font/stylish"/>
+            <TextView
+                android:id="@+id/company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{shoe.company}"
+                tools:text="Nike"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/stylish"
+                android:textSize="28sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{shoe.description}"
+                tools:text="This is a Nike shoe"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/stylish"
+                android:textSize="28sp"
+                app:layout_constraintTop_toBottomOf="@id/company"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     </com.google.android.material.card.MaterialCardView>
 

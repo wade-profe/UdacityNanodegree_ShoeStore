@@ -13,5 +13,6 @@
     <string name="instruction_2">Add your shoe details in the input fields and save!</string>
     <string name="c0ntinue">Continue</string>
     <string name="to_the_list">To the list</string>
+    <string name="shoe_size">Size: %1$s</string>
 
 </resources>
