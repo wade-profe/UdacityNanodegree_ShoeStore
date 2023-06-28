@@ -14,5 +14,6 @@
     <string name="c0ntinue">Continue</string>
     <string name="to_the_list">To the list</string>
     <string name="shoe_size">Size: %1$s</string>
+    <string name="no_shoes_added">No shoes added :(</string>
 
 </resources>

@@ -8,6 +8,8 @@ import androidx.core.view.marginTop
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.databinding.EmptyShoeListBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.databinding.ShoeListItemBinding
 
@@ -21,15 +23,24 @@ class ShoeListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        shoeListBinding = DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
+        shoeListBinding =
+            DataBindingUtil.inflate(inflater, R.layout.shoe_list_fragment, container, false)
 
-        shoeListViewModel.shoeList.observe(viewLifecycleOwner) {shoeList ->
-            shoeList.forEach {shoe ->
-                val shoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, null, false)
-                shoeListItemBinding.shoe = shoe
-                shoeListBinding.shoeListLinearLayout.addView(shoeListItemBinding.root)
+        shoeListViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
+            if (shoeList.size == 0) {
+                val emptyShoeListBinding = EmptyShoeListBinding.inflate(layoutInflater, shoeListBinding.shoeListLinearLayout, false)
+                shoeListBinding.shoeListLinearLayout.addView(emptyShoeListBinding.root)
+            } else {
+                shoeList.forEach { shoe ->
+                    val shoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, shoeListBinding.shoeListLinearLayout, false)
+                    shoeListItemBinding.shoe = shoe
+                    shoeListBinding.shoeListLinearLayout.addView(shoeListItemBinding.root)
+                }
             }
+
         }
+
+        shoeListBinding.fab.setOnClickListener { findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment) }
 
         return shoeListBinding.root
 
