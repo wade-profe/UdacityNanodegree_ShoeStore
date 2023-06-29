@@ -20,7 +20,9 @@
             android:layout_height="wrap_content"
             android:text="@string/login"
             style="@style/page_header_style"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/email_text"
@@ -31,15 +33,16 @@
             app:layout_constraintStart_toStartOf="@id/enter_email"
             app:layout_constraintTop_toBottomOf="@id/login_title" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_email"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
-            android:textColor="@color/design_default_color_secondary"
             android:textSize="20sp"
+            android:background="@drawable/card_shape"
+            style="@style/basic_text_style"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.33"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,14 +59,15 @@
             app:layout_constraintStart_toStartOf="@id/enter_password"
             app:layout_constraintTop_toBottomOf="@id/enter_email" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enter_password"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/password"
+            android:background="@drawable/card_shape"
+            style="@style/basic_text_style"
             android:inputType="textPassword"
-            android:textColor="@color/design_default_color_secondary"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.33"

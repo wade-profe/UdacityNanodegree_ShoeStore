@@ -14,8 +14,9 @@
             android:layout_height="wrap_content"
             style="@style/page_header_style"
             android:text="@string/welcome"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/welcome_description"

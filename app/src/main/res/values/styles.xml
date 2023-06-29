@@ -24,11 +24,19 @@
 
     <style name="page_header_style">
         <item name="android:layout_marginTop">50dp</item>
+        <item name="android:fontFamily">@font/stylish</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">32sp</item>
-        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="page_subheader_style">
+        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:fontFamily">@font/stylish</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">28sp</item>
         <item name="layout_constraintStart_toStartOf">parent</item>
-        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="button_style">
