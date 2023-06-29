@@ -1,6 +1,7 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.EmptyShoeListBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.databinding.ShoeListItemBinding
+import timber.log.Timber
 
 class ShoeListFragment: Fragment() {
 
@@ -28,11 +30,19 @@ class ShoeListFragment: Fragment() {
 
         shoeListViewModel.shoeList.observe(viewLifecycleOwner) { shoeList ->
             if (shoeList.size == 0) {
-                val emptyShoeListBinding = EmptyShoeListBinding.inflate(layoutInflater, shoeListBinding.shoeListLinearLayout, false)
+                val emptyShoeListBinding = EmptyShoeListBinding.inflate(
+                    layoutInflater,
+                    shoeListBinding.shoeListLinearLayout,
+                    false
+                )
                 shoeListBinding.shoeListLinearLayout.addView(emptyShoeListBinding.root)
             } else {
                 shoeList.forEach { shoe ->
-                    val shoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, shoeListBinding.shoeListLinearLayout, false)
+                    val shoeListItemBinding = ShoeListItemBinding.inflate(
+                        layoutInflater,
+                        shoeListBinding.shoeListLinearLayout,
+                        false
+                    )
                     shoeListItemBinding.shoe = shoe
                     shoeListBinding.shoeListLinearLayout.addView(shoeListItemBinding.root)
                 }

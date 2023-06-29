@@ -31,7 +31,7 @@
     </style>
 
     <style name="page_subheader_style">
-        <item name="android:layout_marginTop">50dp</item>
+        <item name="android:layout_marginTop">25dp</item>
         <item name="android:fontFamily">@font/stylish</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">28sp</item>

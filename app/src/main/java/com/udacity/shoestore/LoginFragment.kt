@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.LoginFragmentBinding
 
 class LoginFragment: Fragment() {
@@ -28,7 +29,7 @@ class LoginFragment: Fragment() {
         if(loginFragmentBinding.enterEmail.text.isNullOrBlank() || loginFragmentBinding.enterPassword.text.isNullOrBlank()){
             Toast.makeText(requireContext(), "Please enter an email and password", Toast.LENGTH_SHORT).show()
         } else {
-            Navigation.findNavController(loginFragmentBinding.root).navigate(R.id.action_loginFragment_to_welcomeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
         }
     }
 }

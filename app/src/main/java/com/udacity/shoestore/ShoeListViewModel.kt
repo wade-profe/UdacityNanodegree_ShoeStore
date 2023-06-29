@@ -1,21 +1,35 @@
 package com.udacity.shoestore
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.map
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
+import java.lang.Double.parseDouble
 
 class ShoeListViewModel: ViewModel() {
 
     private val _shoeList = MutableLiveData<List<Shoe>>(emptyList())
-        .apply { value = mutableListOf(Shoe("Test1", 9.0, "Nike", "a Nike shoe"),
-        Shoe("Test2", 5.0, "Adidas", "an Adidas shoe"), Shoe("Test3", 7.5, "Puma", "a Puma shoe"),
-        Shoe("Test4", 7.5, "Puma", "a Puma shoe"),
-        Shoe("Test5", 7.5, "Puma", "a Puma shoe"),
-        Shoe("Test6", 7.5, "Puma", "a Puma shoe"),
-        Shoe("Test7", 7.5, "Puma", "a Puma shoe"))}
 
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
 
+    val sizeString: MutableLiveData<String> = MutableLiveData("")
+    private val sizeDouble: LiveData<Double> = sizeString.map { size -> makeDouble(size)}
+    val newShoe = MutableLiveData(Shoe("", sizeDouble.value ?: 0.0, "", ""))
+
+    fun makeDouble(input: String): Double {
+        if(input.isNotEmpty()) {
+            return input.toDouble()
+        } else {
+            return 0.0
+        }
+    }
+
+    fun addShoe(){
+        _shoeList.value?.plus(newShoe)
+        newShoe.value = Shoe("", sizeDouble.value ?: 0.0, "", "")
+    }
 }
