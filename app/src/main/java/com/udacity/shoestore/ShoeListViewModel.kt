@@ -15,21 +15,21 @@ class ShoeListViewModel: ViewModel() {
 
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
-
     val sizeString: MutableLiveData<String> = MutableLiveData("")
-    private val sizeDouble: LiveData<Double> = sizeString.map { size -> makeDouble(size)}
-    val newShoe = MutableLiveData(Shoe("", sizeDouble.value ?: 0.0, "", ""))
+    val newShoe = MutableLiveData(Shoe("", 0.0, "", ""))
 
-    fun makeDouble(input: String): Double {
-        if(input.isNotEmpty()) {
-            return input.toDouble()
-        } else {
-            return 0.0
+    fun addShoe(): Boolean{
+        newShoe.value?.let {
+            if(it.name.isEmpty() || sizeString.value!!.isEmpty() || it.company.isEmpty()){
+                return false
+            } else {
+                it.size = sizeString.value?.toDouble() ?: 0.0
+                _shoeList.value = _shoeList.value?.plus(newShoe.value!!)
+                newShoe.value = Shoe("", 0.0, "", "")
+                sizeString.value = ""
+                return true
+            }
         }
-    }
-
-    fun addShoe(){
-        _shoeList.value?.plus(newShoe)
-        newShoe.value = Shoe("", sizeDouble.value ?: 0.0, "", "")
+        return false
     }
 }

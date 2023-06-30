@@ -2,6 +2,7 @@ package com.udacity.shoestore
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
         navController = navController()
+        setSupportActionBar(findViewById(R.id.toolbar))
+        NavigationUI.setupActionBarWithNavController(this, navController())
+
     }
 
     fun navController(): NavController {
