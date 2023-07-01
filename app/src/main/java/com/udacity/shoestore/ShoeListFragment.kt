@@ -71,8 +71,8 @@ class ShoeListFragment: Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
-                || super.onOptionsItemSelected(item)
+        findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
+        return true
     }
 
 
