@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.LoginFragmentBinding
 
 class LoginFragment: Fragment() {
@@ -20,8 +20,11 @@ class LoginFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        loginFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
+        loginFragmentBinding = DataBindingUtil.inflate(inflater,
+            R.layout.login_fragment, container, false)
+
         loginFragmentBinding.loginFragment = this
+
         return loginFragmentBinding.root
     }
 

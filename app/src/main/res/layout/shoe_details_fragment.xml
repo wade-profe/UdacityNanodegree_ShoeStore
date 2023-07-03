@@ -7,8 +7,11 @@
     <data>
         <variable
             name="viewModel"
-            type="com.udacity.shoestore.ShoeListViewModel" />
+            type="com.udacity.shoestore.models.ShoeListViewModel" />
     </data>
+
+<!--    I am using constraint layout here because it allows me to organize my views
+conveniently without having to use multiple linear layouts-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/page_header_style"
-            android:text="Add a shoe"
+            android:text="@string/add_a_shoe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -30,7 +33,7 @@
             tools:ignore="MissingConstraints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name:"
+            android:text="@string/name_required"
             style="@style/page_subheader_style"
             app:layout_constraintTop_toBottomOf="@id/add_shoe_title"
             android:layout_marginStart="25dp"/>
@@ -44,7 +47,7 @@
             android:layout_marginStart="20dp"
             android:background="@drawable/card_shape"
             android:maxLength="20"
-            android:hint="Shoe name"
+            android:hint="@string/shoe_name"
             style="@style/basic_text_style"
             android:text="@={viewModel.newShoe.name}"/>
 
@@ -53,7 +56,7 @@
             tools:ignore="MissingConstraints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Size:"
+            android:text="@string/size_required"
             style="@style/page_subheader_style"
             app:layout_constraintTop_toBottomOf="@id/enter_name"
             android:layout_marginStart="25dp"/>
@@ -65,7 +68,7 @@
             app:layout_constraintTop_toBottomOf="@id/size"
             app:layout_constraintStart_toStartOf="@id/enter_name"
             android:background="@drawable/card_shape"
-            android:hint="Shoe size"
+            android:hint="@string/size"
             style="@style/basic_text_style"
             android:inputType="numberDecimal"
             android:text="@={viewModel.sizeString}"/>
@@ -75,7 +78,7 @@
             tools:ignore="MissingConstraints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Company:"
+            android:text="@string/company_required"
             style="@style/page_subheader_style"
             app:layout_constraintTop_toBottomOf="@id/enter_size"
             android:layout_marginStart="25dp" />
@@ -88,7 +91,7 @@
             app:layout_constraintStart_toStartOf="@id/enter_size"
             android:background="@drawable/card_shape"
             android:maxLength="20"
-            android:hint="Shoe brand"
+            android:hint="@string/shoe_brand"
             style="@style/basic_text_style"
             android:text="@={viewModel.newShoe.company}"/>
 
@@ -97,7 +100,7 @@
             tools:ignore="MissingConstraints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Description:"
+            android:text="@string/description"
             style="@style/page_subheader_style"
             app:layout_constraintTop_toBottomOf="@id/enter_company"
             android:layout_marginStart="25dp" />
@@ -110,17 +113,18 @@
             app:layout_constraintTop_toBottomOf="@id/description"
             app:layout_constraintStart_toStartOf="@id/enter_company"
             android:background="@drawable/card_shape"
-            android:hint="Description"
+            android:hint="@string/description"
             style="@style/basic_text_style"
             android:inputType="textMultiLine"
-            android:text="@={viewModel.newShoe.description}"/>
+            android:text="@={viewModel.newShoe.description}"
+            android:maxLines="5"/>
 
         <Button
             android:id="@+id/cancel_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/button_style"
-            android:text="Cancel"
+            android:text="@string/cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="20dp"
@@ -131,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/button_style"
-            android:text="Save"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="20dp"

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    Using the constraint layout here allows me to arrange the scrollview,
+shoe lit items and FAB so that the FAB is always on-screen it overlaps the shoe views
+when the page has enough items to be scrollable-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -37,7 +40,8 @@
             android:backgroundTint="@color/colorAccent"
             android:src="@drawable/ic_add"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/add_shoe_button" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,8 +13,21 @@
     <string name="instruction_2">Add your shoe details in the input fields and save!</string>
     <string name="c0ntinue">Continue</string>
     <string name="to_the_list">To the list</string>
-    <string name="shoe_size">Size: %1$s</string>
+    <string name="shoe_size_var">Size: %1$s</string>
     <string name="no_shoes_added">No shoes added :(</string>
     <string name="logout">Logout</string>
+    <string name="add_a_shoe">Add a shoe</string>
+    <string name="name_required">Name*:</string>
+    <string name="shoe_name">Shoe name</string>
+    <string name="size_required">Size*:</string>
+    <string name="add_shoe_button">Add shoe button</string>
+    <string name="company_required">Company*:</string>
+    <string name="shoe_brand">Shoe brand</string>
+    <string name="description">Description:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="size">Size</string>
+    <string name="image_of_a_plus_icon">Image of a plus icon</string>
+    <string name="image_of_a_save_icon">Image of a save icon</string>
 
 </resources>

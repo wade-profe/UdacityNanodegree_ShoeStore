@@ -1,13 +1,8 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.models
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.map
-import com.udacity.shoestore.models.Shoe
-import timber.log.Timber
-import java.lang.Double.parseDouble
 
 class ShoeListViewModel: ViewModel() {
 
